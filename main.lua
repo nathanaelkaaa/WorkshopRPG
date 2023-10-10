@@ -142,5 +142,17 @@ end
 
 function love.draw()
     love.graphics.print("Hello world ", 400, 400)
-
+    cam:attach()
+        gameMap:drawLayer(gameMap.layers["ground"])
+        gameMap:drawLayer(gameMap.layers["wall_2"])
+        gameMap:drawLayer(gameMap.layers["item_backward"])
+        gameMap:drawLayer(gameMap.layers["wall"])
+        gameMap:drawLayer(gameMap.layers["table_2"])
+        gameMap:drawLayer(gameMap.layers["table"])
+        gameMap:drawLayer(gameMap.layers["item_forward_2"])
+        gameMap:drawLayer(gameMap.layers["item_forward"])
+        gameMap:drawLayer(gameMap.layers["deco_no_col"])
+        player.anim:draw(player.spriteSheet, player.x, player.y, nil, 3, nil, 6, 9)
+        gameMap:drawLayer(gameMap.layers["item_backward_no_col"])
+    cam:detach()
 end
