@@ -1,18 +1,46 @@
 npcs = {}
 
-function spawnNpc(x, y, id, size)
+function spawnNpc(x, y, id, character)
     local npc = {}
     npc.width = 25
     npc.height = 10
     npc = world:newBSGRectangleCollider(x,y,npc.width, npc.height,3)
-    npc.sprite = sprites.npc.sprite
-    npc.spriteSheet = sprites.npc.spriteSheet
-    npc.grid = anim8.newGrid(16, 23, npc.spriteSheet:getWidth(), npc.spriteSheet:getHeight())
+
+    if character == "alain" then
+        npc.sprite = sprites.npc.alain.sprite
+        npc.spriteSheet = sprites.npc.alain.spriteSheet
+        npc.grid = anim8.newGrid(16, 23, npc.spriteSheet:getWidth(), npc.spriteSheet:getHeight())
+    elseif character == "adam" then
+        npc.sprite = sprites.npc.adam.sprite
+        npc.spriteSheet = sprites.npc.adam.spriteSheet
+        npc.grid = anim8.newGrid(16, 23, npc.spriteSheet:getWidth(), npc.spriteSheet:getHeight())
+    elseif character == "douglas" then
+        npc.sprite = sprites.npc.douglas.sprite
+        npc.spriteSheet = sprites.npc.douglas.spriteSheet
+        npc.grid = anim8.newGrid(16, 23, npc.spriteSheet:getWidth(), npc.spriteSheet:getHeight())
+    elseif character == "sandra" then
+        npc.sprite = sprites.npc.sandra.sprite
+        npc.spriteSheet = sprites.npc.sandra.spriteSheet
+        npc.grid = anim8.newGrid(16, 23, npc.spriteSheet:getWidth(), npc.spriteSheet:getHeight())
+    elseif character == "daisy" then
+        npc.sprite = sprites.npc.daisy.sprite
+        npc.spriteSheet = sprites.npc.daisy.spriteSheet
+        npc.grid = anim8.newGrid(16, 23, npc.spriteSheet:getWidth(), npc.spriteSheet:getHeight())
+    elseif character == "celine" then
+        npc.sprite = sprites.npc.celine.sprite
+        npc.spriteSheet = sprites.npc.celine.spriteSheet
+        npc.grid = anim8.newGrid(16, 23, npc.spriteSheet:getWidth(), npc.spriteSheet:getHeight())
+    else 
+        npc.sprite = sprites.npc.sprite
+        npc.spriteSheet = sprites.npc.spriteSheet
+        npc.grid = anim8.newGrid(16, 23, npc.spriteSheet:getWidth(), npc.spriteSheet:getHeight())
+    end
 
 
     npc:setFixedRotation(true)
 
     npc.animations = {}
+
     npc.animations.down = anim8.newAnimation( npc.grid(1, '1-2'), 1 )
     npc.animations.up = anim8.newAnimation( npc.grid(2, '1-2'), 1 )
     npc.animations.right = anim8.newAnimation( npc.grid(3, '1-2'), 1 )
@@ -25,6 +53,7 @@ function spawnNpc(x, y, id, size)
 
 
 
+
     npc.anim = npc.animations.down
 
     npc:setType('static')
@@ -32,10 +61,10 @@ function spawnNpc(x, y, id, size)
     npc.x = x- 2.5
     npc.y = y- 38
     npc.id = id
-    npc.size = "small"
+    npc.character = "alain"
     npc.state = 0
     npc.layer = -1
-    if size then npc.size = size end
+    if character then npc.character = character end
 
 
 
@@ -50,13 +79,13 @@ function spawnNpc(x, y, id, size)
         --npc.state = 1
    -- end
 
-    if npc.size == "small" then
-        npc.width = 25
-        npc.height = 10
-    elseif npc.size == "big" then
-        npc.width = 20
-        npc.height = 15
-    end
+
+    npc.width = 25
+    npc.height = 10
+
+       -- npc.width = 20
+       -- npc.height = 15
+
 
     -- Wall spawned overtop of the npc, passed npc as parent
     --local wall = world:newBSGRectangleCollider(x,y,npc.width,npc.height,5)
@@ -64,26 +93,41 @@ function spawnNpc(x, y, id, size)
     --wall.parent = npc
     --table.insert(walls,wall)
 
+    
+    function chooseDialog()
+        if character == "alain" then
+            textBox:start("alain")
+        elseif character == "adam" then
+            textBox:start("adam")
+        elseif character == "douglas" then
+            textBox:start("douglas")
+        elseif character == "sandra" then
+            textBox:start("sandra")
+        elseif character == "daisy" then
+            textBox:start("daisy")
+        elseif character == "celine" then
+            textBox:start("celine")
+        else 
+            textBox:start("alain")
+        end
+    
+    end
+
 
 
     function npc:interact()
-            if love.keyboard.isDown('e') then
-                    if textBox.active == false then
-                        textBox:start("test")
-                    end
-            end
-                
 
-
-
-
+        if love.keyboard.isDown('e') then
+                --if  scroll.text == "" and scroll.messageObj == nil and scroll.charTimer == 0 then
+                    chooseDialog()
+        end
             --if self.state == 0 then
                 --self.state = 1
                 --dj.play(sounds.items.npc, "static", "effect")
                 --data.npcs[self.id] = true
-                --if self.size == "small" then
+                --if self.character == "small" then
                     --npcs:spawnSmallLoot(self.centerX, self.centerY, self.id)
-                --elseif self.size == "big" then
+                --elseif self.character == "big" then
                     --player:gotItem(npcs:getBigLoot(self.id), true)
                 --end
             --end
@@ -121,20 +165,44 @@ function npcs:draw(layer)
     
     for _,n in ipairs(npcs) do
         if n.layer == layer then
-            if n.state == 0 and n.size == "small" then
+            if n.state == 0 and n.character == "alain" then
                 n.anim = n.animations.down
                 n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
-                --love.graphics.draw(sprites.npc.stand, c.x, c.y, nil,2,2 )
-                --love.graphics.circle( "fill", n.x+(n.width/2)+3, n.y+(n.height/2)+33, 2 )
-     
-            elseif n.state == 1 and n.size == "small" then
+            elseif n.state == 1 and n.character == "alain" then
                 n.anim = n.animations.down.active
                 n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
-                --love.graphics.draw(sprites.npc.active, n.x, n.y,nil,2,2 )
-            elseif n.state == 0 and n.size == "big" then
-                love.graphics.draw(sprites.npc.stand, n.x, n.y)
-            elseif n.state == 1 and n.size == "big" then
-                love.graphics.draw(sprites.npc.active, n.x, n.y)
+            elseif n.state == 0 and n.character == "adam" then
+                n.anim = n.animations.down
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            elseif n.state == 1 and n.character == "adam" then
+                n.anim = n.animations.down.active
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            elseif n.state == 0 and n.character == "douglas" then
+                n.anim = n.animations.left
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            elseif n.state == 1 and n.character == "douglas" then
+                n.anim = n.animations.left.active
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+
+            elseif n.state == 0 and n.character == "sandra" then
+                n.anim = n.animations.down
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            elseif n.state == 1 and n.character == "sandra" then
+                n.anim = n.animations.down.active
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            elseif n.state == 0 and n.character == "daisy" then
+                n.anim = n.animations.right
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            elseif n.state == 1 and n.character == "daisy" then
+                n.anim = n.animations.right.active
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            elseif n.state == 0 and n.character == "celine" then
+                n.anim = n.animations.left
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            elseif n.state == 1 and n.character == "celine" then
+                n.anim = n.animations.left.active
+                n.anim:draw(n.spriteSheet, n.x, n.y, nil, 2.5, nil, 2, 2)
+            
             end
         end
     end

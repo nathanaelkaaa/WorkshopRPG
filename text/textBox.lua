@@ -26,22 +26,34 @@ function textBox:start(m)
   -- Freezes everything (mostly)
   gameState.state = 0
 
-
-  if m == "failedLoad" or m == "tutorial" then
-    textBox:init("failedLoad")
-  end
-
-  if m == "tutorial" then
-    textBox:init("tutorial")
-  end
-
-  if m == "intro" then
-    textBox:init("intro")
-  end
-
   if m == "test" then
     textBox:init("test")
   end
+
+  if m == "alain" then
+    textBox:init("alain")
+  end
+  
+  if m == "adam" then
+    textBox:init("adam")
+  end
+  
+  if m == "douglas" then
+    textBox:init("douglas")
+  end
+
+  if m == "sandra" then
+    textBox:init("sandra")
+  end
+
+  if m == "daisy" then
+    textBox:init("daisy")
+  end
+
+  if m == "celine" then
+    textBox:init("celine")
+  end
+
 
   scroll:showMessage(m)
 
@@ -52,9 +64,8 @@ function textBox:update(dt)
 
   if self.active and scroll.messageObj == nil then
     self.active = false
-    --gameState.state = 1
+    gameState.state = 1
   end
-
 end
 
 
@@ -101,51 +112,7 @@ end
 
 function textBox:init(type)
 
-  if type == "pickup" then
-    textBox.x = 180
-    textBox.y = 180
-    textBox.width = gameWidth - 360
-    textBox.height = 410
-    textBox.textX = textBox.x + 40
-    textBox.textY = textBox.y + 226
-    textBox.font = fonts.pickup
-    textBox.visible = true
-  end
-
-  if type == "failedLoad" then
-    textBox.x = 180
-    textBox.y = 265
-    textBox.width = gameWidth - 360
-    textBox.height = 170
-    textBox.textX = textBox.x + 40
-    textBox.textY = textBox.y + 60
-    textBox.font = fonts.pickup
-    textBox.visible = true
-  end
-
-  if type == "tutorial" then
-    textBox.x = 180
-    textBox.y = 60
-    textBox.width = gameWidth - 360
-    textBox.height = 189
-    textBox.textX = textBox.x + 40
-    textBox.textY = textBox.y + 44
-    textBox.font = fonts.pickup
-    textBox.visible = true
-  end
-
-  if type == "intro" then
-    textBox.x = -100
-    textBox.y = -100
-    textBox.width = gameWidth * scale + 200
-    textBox.height = gameMap.height * scale + 200
-    textBox.textX = 58
-    textBox.textY = 104
-    textBox.font = fonts.menu.intro
-    textBox.visible = false
-  end
-
-  if type == "test" then
+  if type == "test" or type == "alain" or type == "adam" or type == "douglas" or type == "sandra" or type == "daisy" or type == "celine" then
     textBox.x = 60
     textBox.y = gameHeight- 70
     textBox.width = gameWidth-120

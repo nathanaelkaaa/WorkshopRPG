@@ -15,7 +15,7 @@ function scroll:showMessage(m)
 
   -- Sets the first set of text for the message
   self.fullMessage = messages[m][1]
-  self.title = messages[m].title
+  self.title = m--messages[m].title
   self.text = ""
 
   self.messageNum = 1
@@ -76,6 +76,7 @@ function scroll:update(dt)
 
         end
       else
+
         if love.keyboard.isDown("space","return", 'z', 'q', 's', 'd','e') or love.mouse.isDown(1,2) then
           self.text = ""
           self.title = ""

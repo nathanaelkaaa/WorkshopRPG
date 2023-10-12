@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="23" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="61">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="23" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="71">
  <editorsettings>
   <export target="map.lua" format="lua"/>
  </editorsettings>
@@ -299,7 +299,7 @@
   <object id="12" x="512" y="288" width="14.2917" height="399.333"/>
   <object id="13" x="209.667" y="671.333" width="316" height="14.3333"/>
   <object id="14" x="210" y="480.333" width="14.3333" height="199.667"/>
-  <object id="15" x="416.667" y="481" width="109.424" height="31.6667"/>
+  <object id="15" x="416.667" y="481" width="109.424" height="62.6667"/>
   <object id="16" x="224.063" y="480.667" width="159.271" height="61.3333"/>
   <object id="17" x="89.75" y="480.13" width="134.25" height="11.1196"/>
  </objectgroup>
@@ -335,6 +335,11 @@
   <object id="55" x="475.75" y="520.375" width="28.125" height="71.375"/>
  </objectgroup>
  <objectgroup id="18" name="npc">
-  <object id="60" type="small" x="452.167" y="275.302" width="29.0909" height="29.0909"/>
+  <object id="62" type="alain" x="599.636" y="240.727" width="22.9091" height="22.9091"/>
+  <object id="64" type="sandra" x="295.034" y="135.625" width="25.3636" height="17.4545"/>
+  <object id="65" type="douglas" x="446.875" y="626.75" width="26.375" height="25"/>
+  <object id="66" type="adam" x="230.667" y="422.333" width="23" height="21"/>
+  <object id="68" type="daisy" x="331" y="261" width="16.6667" height="16.3333"/>
+  <object id="70" type="celine" x="380.25" y="260.75" width="15" height="15"/>
  </objectgroup>
 </map>

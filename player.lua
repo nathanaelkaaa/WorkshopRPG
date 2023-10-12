@@ -4,16 +4,17 @@
     player.speed = 150
     player.sprite = sprites.player.sprite
     player.spriteSheet = sprites.player.spriteSheet
-    player.grid = anim8.newGrid(12, 18, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
+    player.grid = anim8.newGrid(16, 23, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
 
     player:setFixedRotation(true)
 
 
     player.animations = {}
     player.animations.down = anim8.newAnimation( player.grid('1-4', 1), 0.2 )
-    player.animations.left = anim8.newAnimation( player.grid('1-4', 2), 0.2 )
+    player.animations.up = anim8.newAnimation( player.grid('1-4', 2), 0.2 )
     player.animations.right = anim8.newAnimation( player.grid('1-4', 3), 0.2 )
-    player.animations.up = anim8.newAnimation( player.grid('1-4', 4), 0.2 )
+    player.animations.left = anim8.newAnimation( player.grid('1-4', 4), 0.2 )
+
 
     player.anim = player.animations.left
 
@@ -61,8 +62,8 @@
             player.anim:gotoFrame(2)
         end
 
-        player.x = player:getX()
-        player.y = player:getY()-20 -- to have collider at the feet of character
+        player.x = player:getX()-5
+        player.y = player:getY()-25 -- to have collider at the feet of character
         player.anim:update(dt)
 
     end

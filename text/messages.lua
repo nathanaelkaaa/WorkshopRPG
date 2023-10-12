@@ -2,31 +2,75 @@
 
 messages = {}
 
-messages.failedLoad = {
-  "No save file found.",
-}
-
-messages.intro = {
-  "1-31-2056              \n"
-  .. "St. Louis, Missouri, United States of America     @\n\n"
-  .. "Asteroid \"433 Eros\" has crashed into Earth approximately \n30 miles "
-  .. "southwest of the city.@The impact has uncovered the\nentrance to a series"
-  .. " of unexplored caves deep underground.      @\n\n"
-  .. "It was discovered in the year 2053 that Eros was home to a\nnew form of "
-  .. "life.@Movement has been detected beneath the\nsurface of the impact site,"
-  .. " indicating that these alien\nlifeforms have migrated into the caves."
-  .. "      @\n\n"
-  .. "We are sending an expert in to investigate."
-
-}
-
-messages.tutorial = {
-  "Use <W><A><S><D> to move.\nUse the mouse to look around.",
-}
 
 messages.test = {
   "Hello wordl ceci est un test !",
+  "suite du test"
 }
 messages.test.title = {
   "Nathanael Ka"
 }
+
+
+
+
+
+messages.alain = {
+  "Bonjour et bienvenue dans l'equipe !"
+}
+messages.alain.title = {
+  "Alain Verre"
+}
+
+
+messages.adam = {
+  "Ici, nous valorisons la collaboration.\n"
+  .."N'hesite pas a partager tes idees lors de nos reunions d'equipe."
+}
+
+messages.adam.title = {
+  "Adam Troyjour"
+}
+
+
+
+messages.douglas = {
+  "As-tu deja repere la machine a cafe dans la salle de pause ?\n"
+  .."C'est la que se passent toutes les discussions importantes !"
+}
+messages.douglas.title = {
+  "Douglas Ochkola"
+}
+
+
+messages.sandra = {
+  "Voici un aperçu de tes responsabilites principales.\n"
+  .."Si tu as besoin d'aide pour t'adapter a tes tâches, fais-moi signe."
+}
+messages.sandra.title = {
+  "Sandra Nycoovertur"
+}
+
+
+messages.daisy = {
+  "Oh, et n'oublie pas notre dejeuner d'equipe tous les vendredis.\n"
+  .."Chacun apporte quelque chose a partager."
+}
+messages.daisy.title = {
+  "Daisy Draté"
+}
+
+
+messages.celine = {
+  "Si jamais tu as des problemes techniques avec ton ordinateur,\n"
+  .."contacte le service informatique. Ils sont tres reactifs."
+}
+messages.celine.title = {
+  "Celine Evitable"
+}
+
+
+
+
+
+

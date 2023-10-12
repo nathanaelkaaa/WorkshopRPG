@@ -42,6 +42,7 @@ function love.load()
             table.insert(walls,wall)
         end
     end 
+    
     if gameMap.layers["npc"] then
         for i, obj in pairs(gameMap.layers["npc"].objects) do
             spawnNpc(obj.x, obj.y, obj.name, obj.type)
@@ -54,9 +55,10 @@ function love.update(dt)
     
     player:update(dt)
     world:update(dt)
-    npcs:update(dt)
+
     scroll:update(dt)
     textBox:update(dt)
+    npcs:update(dt)
     cam:update(dt)
 
 end
@@ -73,11 +75,11 @@ function love.draw()
         gameMap:drawLayer(gameMap.layers["item_forward_2"])
         gameMap:drawLayer(gameMap.layers["item_forward"])
         gameMap:drawLayer(gameMap.layers["deco_no_col"])
-        player.anim:draw(player.spriteSheet, player.x, player.y, nil, 3, nil, 6, 9)
-        gameMap:drawLayer(gameMap.layers["item_backward_no_col"])
-        world:draw()
         npcs:draw(-1)
         npcs:draw(1)
+        player.anim:draw(player.spriteSheet, player.x, player.y, nil, 2.5, nil, 6, 9)
+        gameMap:drawLayer(gameMap.layers["item_backward_no_col"])
+        world:draw()
     cam:detach()
     textBox:draw()
 
