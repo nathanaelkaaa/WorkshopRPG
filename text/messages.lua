@@ -27,4 +27,6 @@ messages.tutorial = {
 messages.test = {
   "Hello wordl ceci est un test !",
 }
-
+messages.test.title = {
+  "Nathanael Ka"
+}

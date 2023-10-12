@@ -1,7 +1,7 @@
 function startup()
 
     -- Game resolution
-    gameWidth = 1152
+    gameWidth = 300
     gameHeight = 768
   
     scale = 50 -- adjusts game window to screen size
@@ -33,7 +33,7 @@ function startup()
     -- Physics setup
     -- Windfield is a library that makes LOVE's physics easier to work with
     -- https://github.com/SSYGEN/windfield
-    local wf = require 'librairies/windfield'
+    local wf = require 'libraries/windfield'
     world = wf.newWorld(0, 0) -- No gravity, bodies can sleep
   
 

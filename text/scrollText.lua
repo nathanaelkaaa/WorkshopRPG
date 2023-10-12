@@ -2,6 +2,7 @@
 
 scroll = {}
 
+scroll.title = ""        -- Name of the character who chat
 scroll.text = ""         -- Text currently on screen
 scroll.fullMessage = ""  -- Full message that will be displayed
 scroll.messageObj = nil  -- Message object pulled from messages.lua
@@ -14,6 +15,7 @@ function scroll:showMessage(m)
 
   -- Sets the first set of text for the message
   self.fullMessage = messages[m][1]
+  self.title = messages[m].title
   self.text = ""
 
   self.messageNum = 1
@@ -76,6 +78,7 @@ function scroll:update(dt)
       else
         if love.keyboard.isDown("space","return", 'z', 'q', 's', 'd','e') or love.mouse.isDown(1,2) then
           self.text = ""
+          self.title = ""
           self.fullMessage = ""
           self.charNum = 0
           self.messageNum = self.messageNum + 1

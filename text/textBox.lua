@@ -52,7 +52,7 @@ function textBox:update(dt)
 
   if self.active and scroll.messageObj == nil then
     self.active = false
-    gameState.state = 1
+    --gameState.state = 1
   end
 
 end
@@ -79,6 +79,9 @@ function textBox:draw()
     -- Draw text
     love.graphics.setColor(1, 1, 1, 1)
     love.graphics.setFont(self.font)
+    if(scroll.title) then
+      love.graphics.print(scroll.title, self.titleX * scale, self.titleY * scale)
+    end
     love.graphics.print(scroll.text, self.textX * scale, self.textY * scale)
 
     -- Draw image
@@ -135,7 +138,7 @@ function textBox:init(type)
     textBox.x = -100
     textBox.y = -100
     textBox.width = gameWidth * scale + 200
-    textBox.height = gameHeight * scale + 200
+    textBox.height = gameMap.height * scale + 200
     textBox.textX = 58
     textBox.textY = 104
     textBox.font = fonts.menu.intro
@@ -143,12 +146,14 @@ function textBox:init(type)
   end
 
   if type == "test" then
-    textBox.x = 200
-    textBox.y = 575
-    textBox.width = gameWidth - 400
-    textBox.height = 120
-    textBox.textX = textBox.x + 40
-    textBox.textY = textBox.y + 44
+    textBox.x = 60
+    textBox.y = gameHeight- 70
+    textBox.width = gameWidth-120
+    textBox.height = 50
+    textBox.titleX = textBox.x + 10
+    textBox.titleY = textBox.y + 2
+    textBox.textX = textBox.x + 5
+    textBox.textY = textBox.y + 10
     textBox.font = fonts.dialog.text
     textBox.visible = true
   end

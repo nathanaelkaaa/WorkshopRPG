@@ -25,5 +25,5 @@ fonts.misc.tutorial = love.graphics.newFont("fonts/russoone/RussoOne-Regular.ttf
 
 -- Fonts used for the Main Menu and Intro
 fonts.dialog = {}
-fonts.dialog.text = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 32 * scale)
+fonts.dialog.text = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 6 * scale)
 
