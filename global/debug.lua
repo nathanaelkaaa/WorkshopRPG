@@ -17,5 +17,7 @@ function debug:draw(layer)
     love.graphics.print(scroll.messageNum,20, 120)
     love.graphics.print(scroll.charNum ,20, 140)
     love.graphics.print(string.format("%s\n", tostring(player.active)),20, 160)
+    love.graphics.setColor(0, 1, 0, 1)
+    love.graphics.print(string.format("%s\n", tostring(textBox.active)),20, 180)
     love.graphics.setColor(1, 1, 1, 1)
 end

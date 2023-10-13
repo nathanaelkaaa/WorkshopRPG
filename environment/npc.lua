@@ -119,33 +119,22 @@ function spawnNpc(x, y, id, character)
         if player.active == true then
             if love.keyboard.isDown('e') then
                     if character == "alain" then
-                        textBox:start("alain")
+                            textBox:start("alain")
                     elseif character == "adam" then
-                        textBox:start("adam")
+                            textBox:start("adam")
                     elseif character == "douglas" then
-                        textBox:start("douglas")
+                            textBox:start("douglas")
                     elseif character == "sandra" then
-                        textBox:start("sandra")
+                            textBox:start("sandra")
                     elseif character == "daisy" then
-                        textBox:start("daisy")
+                            textBox:start("daisy")
                     elseif character == "celine" then
-                        textBox:start("celine")
+                            textBox:start("celine")
                     else 
-                        textBox:start("alain")
+                            textBox:start("alain")
                     end
 
             end
-            
-            --if self.state == 0 then
-                --self.state = 1
-                --dj.play(sounds.items.npc, "static", "effect")
-                --data.npcs[self.id] = true
-                --if self.character == "small" then
-                    --npcs:spawnSmallLoot(self.centerX, self.centerY, self.id)
-                --elseif self.character == "big" then
-                    --player:gotItem(npcs:getBigLoot(self.id), true)
-                --end
-            --end
         end
     end
 

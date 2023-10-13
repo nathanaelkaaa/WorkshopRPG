@@ -72,7 +72,6 @@ end
 function textBox:draw()
 
   if self.active then
-
     -- Draw black background
     love.graphics.setColor(0, 0, 0, 0.6)
     
@@ -105,6 +104,8 @@ function textBox:draw()
         w/2, h/2)
     end
 
+  else
+    player.active= true
   end
 
 end

@@ -85,7 +85,7 @@ function scroll:update(dt)
           self.fullMessage = ""
           self.charNum = 0
           self.messageNum = self.messageNum + 1
-          love.timer.sleep(1)
+          love.timer.sleep(0.5)
         end
       end
 

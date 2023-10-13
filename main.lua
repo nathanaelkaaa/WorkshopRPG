@@ -83,6 +83,5 @@ function love.draw()
         --world:draw()
     cam:detach()
     textBox:draw()
-    debug:draw()
 
 end
