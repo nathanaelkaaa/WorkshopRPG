@@ -60,6 +60,7 @@ function love.update(dt)
     textBox:update(dt)
     npcs:update(dt)
     cam:update(dt)
+    debug:update(dt)
 
 end
 
@@ -82,5 +83,6 @@ function love.draw()
         --world:draw()
     cam:detach()
     textBox:draw()
+    debug:draw()
 
 end

@@ -116,25 +116,26 @@ function spawnNpc(x, y, id, character)
 
 
     function npc:interact()
+        if player.active == true then
+            if love.keyboard.isDown('e') then
+                    if character == "alain" then
+                        textBox:start("alain")
+                    elseif character == "adam" then
+                        textBox:start("adam")
+                    elseif character == "douglas" then
+                        textBox:start("douglas")
+                    elseif character == "sandra" then
+                        textBox:start("sandra")
+                    elseif character == "daisy" then
+                        textBox:start("daisy")
+                    elseif character == "celine" then
+                        textBox:start("celine")
+                    else 
+                        textBox:start("alain")
+                    end
 
-        if love.keyboard.isDown('e') then
-                --if  scroll.text == "" and scroll.messageObj == nil and scroll.charTimer == 0 then
-                if character == "alain" then
-                    textBox:start("alain")
-                elseif character == "adam" then
-                    textBox:start("adam")
-                elseif character == "douglas" then
-                    textBox:start("douglas")
-                elseif character == "sandra" then
-                    textBox:start("sandra")
-                elseif character == "daisy" then
-                    textBox:start("daisy")
-                elseif character == "celine" then
-                    textBox:start("celine")
-                else 
-                    textBox:start("alain")
-                end
-        end
+            end
+            
             --if self.state == 0 then
                 --self.state = 1
                 --dj.play(sounds.items.npc, "static", "effect")
@@ -145,6 +146,7 @@ function spawnNpc(x, y, id, character)
                     --player:gotItem(npcs:getBigLoot(self.id), true)
                 --end
             --end
+        end
     end
 
     function npc:update(dt)

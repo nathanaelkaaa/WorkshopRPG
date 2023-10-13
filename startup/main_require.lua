@@ -4,6 +4,7 @@ function getGlobals()
     
     require("global/utilities")
     require("global/gameState")
+    require("global/debug")
     gameStateInit()
     
     require("global/cam")

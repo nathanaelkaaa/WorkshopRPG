@@ -16,7 +16,8 @@ messages.test.title = {
 
 
 messages.alain = {
-  "Bonjour et bienvenue dans l'equipe !"
+  "As-tu deja repere la machine a cafe dans la salle de pause ?\n"
+  .."C'est la que se passent toutes les discussions importantes !"
 }
 messages.alain.title = {
   "Alain Verre"
@@ -24,8 +25,7 @@ messages.alain.title = {
 
 
 messages.adam = {
-  "Ici, nous valorisons la collaboration.\n"
-  .."N'hesite pas a partager tes idees lors de nos reunions d'equipe."
+  "Bonjour et bienvenue dans l'equipe !"
 }
 
 messages.adam.title = {
@@ -35,8 +35,8 @@ messages.adam.title = {
 
 
 messages.douglas = {
-  "As-tu deja repere la machine a cafe dans la salle de pause ?\n"
-  .."C'est la que se passent toutes les discussions importantes !"
+  "Ici, nous valorisons la collaboration.\n"
+  .."N'hesite pas a partager tes idees lors de nos reunions d'equipe."
 }
 messages.douglas.title = {
   "Douglas Ochkola"
