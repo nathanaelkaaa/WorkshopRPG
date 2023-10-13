@@ -119,7 +119,21 @@ function spawnNpc(x, y, id, character)
 
         if love.keyboard.isDown('e') then
                 --if  scroll.text == "" and scroll.messageObj == nil and scroll.charTimer == 0 then
-                    chooseDialog()
+                if character == "alain" then
+                    textBox:start("alain")
+                elseif character == "adam" then
+                    textBox:start("adam")
+                elseif character == "douglas" then
+                    textBox:start("douglas")
+                elseif character == "sandra" then
+                    textBox:start("sandra")
+                elseif character == "daisy" then
+                    textBox:start("daisy")
+                elseif character == "celine" then
+                    textBox:start("celine")
+                else 
+                    textBox:start("alain")
+                end
         end
             --if self.state == 0 then
                 --self.state = 1

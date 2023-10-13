@@ -15,7 +15,7 @@ function scroll:showMessage(m)
 
   -- Sets the first set of text for the message
   self.fullMessage = messages[m][1]
-  self.title = m--messages[m].title
+  self.title = messages[m].title
   self.text = ""
 
   self.messageNum = 1

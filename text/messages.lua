@@ -44,8 +44,8 @@ messages.douglas.title = {
 
 
 messages.sandra = {
-  "Voici un aperçu de tes responsabilites principales.\n"
-  .."Si tu as besoin d'aide pour t'adapter a tes tâches, fais-moi signe."
+  "Voici un apercu de tes responsabilites principales.\n"
+  .."Si tu as besoin d'aide pour t'adapter a tes taches, fais-moi signe."
 }
 messages.sandra.title = {
   "Sandra Nycoovertur"

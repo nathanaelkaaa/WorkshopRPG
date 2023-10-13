@@ -79,7 +79,7 @@ function love.draw()
         npcs:draw(1)
         player.anim:draw(player.spriteSheet, player.x, player.y, nil, 2.5, nil, 6, 9)
         gameMap:drawLayer(gameMap.layers["item_backward_no_col"])
-        world:draw()
+        --world:draw()
     cam:detach()
     textBox:draw()
 
